@@ -1,11 +1,11 @@
 import React, { useMemo } from "react";
 
 const Expensivecalculation = ({ num, count }) => {
-  // without
-  //   const calculate = () => {
-  //     console.log("Expensive Calculation");
-  //     return num * 2;
-  //   };
+  // without;
+  // const calculate = () => {
+  //   console.log("Expensive Calculation");
+  //   return num * 2;
+  // };
 
   //with UseMemo
   const memoisedValue = useMemo(() => {

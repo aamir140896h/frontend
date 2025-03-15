@@ -9,6 +9,10 @@ import Main from "./component/memoization/ChildComponent";
 import Example2 from "./component/memoization/Example2";
 import FetchApiUsingMemo from "./component/memoization/FetchApiUsingMemo";
 import Example1Parent from "./component/usecallbackexamples/Example1Parent";
+import UseMemoMain from "./component/memoization/UseMemoMain";
+import UseCallBackExample from "./component/usecallbackexamples/UseCallBackExample";
+import TodoList from "./component/usecallbackexamples/UCTodoList";
+import ToggleComponent from "./component/customhooks/toggle/ToggleComponent";
 function App() {
   const UdatedComp = HOC(User);
   return (
@@ -21,7 +25,11 @@ function App() {
       {/* <Main /> */}
       {/* <Example2 /> */}
       {/* <FetchApiUsingMemo /> */}
-      <Example1Parent />
+      {/* <Example1Parent /> */}
+      {/* <UseMemoMain /> */}
+      {/* <UseCallBackExample /> */}
+      {/* <TodoList /> */}
+      <ToggleComponent />
     </div>
   );
 }
