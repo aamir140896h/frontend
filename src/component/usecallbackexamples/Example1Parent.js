@@ -6,6 +6,7 @@ const Example1Parent = () => {
 
   const handleClick = useCallback(() => {
     console.log("handle click");
+    console.log("handle click");
   }, []);
   return (
     <div>
