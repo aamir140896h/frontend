@@ -16,6 +16,7 @@ import ToggleComponent from "./component/customhooks/toggle/ToggleComponent";
 import Post from "./component/customhooks/fetchedData/Post";
 import Searche from "./component/customhooks/debounce/Searche";
 import Maincomonent from "./component/redux/Maincomonent";
+import CodeReviewFeedback from "./component/Feedback";
 function App() {
   const UdatedComp = HOC(User);
   return (
@@ -28,7 +29,7 @@ function App() {
       {/* <Main /> */}
       {/* <Example2 /> */}
       {/* <FetchApiUsingMemo /> */}
-      <Example1Parent />
+      {/* <Example1Parent /> */}
       {/* <UseMemoMain /> */}
       {/* <UseCallBackExample /> */}
       {/* <TodoList /> */}
@@ -36,6 +37,7 @@ function App() {
       {/* <Post /> */}
       {/* <Searche /> */}
       {/* <Maincomonent /> */}
+      <CodeReviewFeedback />
     </div>
   );
 }
