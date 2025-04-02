@@ -17,6 +17,7 @@ import Post from "./component/customhooks/fetchedData/Post";
 import Searche from "./component/customhooks/debounce/Searche";
 import Maincomonent from "./component/redux/Maincomonent";
 import CodeReviewFeedback from "./component/Feedback";
+import ParentComponent from "./azentiointerviewprep/optimisation/ParentComponent";
 function App() {
   const UdatedComp = HOC(User);
   return (
@@ -37,7 +38,8 @@ function App() {
       {/* <Post /> */}
       {/* <Searche /> */}
       {/* <Maincomonent /> */}
-      <CodeReviewFeedback />
+      {/* <CodeReviewFeedback /> */}
+      <ParentComponent />
     </div>
   );
 }
