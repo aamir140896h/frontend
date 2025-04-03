@@ -18,8 +18,17 @@ import Searche from "./component/customhooks/debounce/Searche";
 import Maincomonent from "./component/redux/Maincomonent";
 import CodeReviewFeedback from "./component/Feedback";
 import ParentComponent from "./azentiointerviewprep/optimisation/ParentComponent";
+import withAuth from "./component/hoc/withAuth";
+import Dashboard from "./component/hoc/Dashboard";
+import Optimzation from "./azentiointerviewprep/optimisation/Optimzation";
+import LargeList from "./azentiointerviewprep/optimisation/Virtualization";
+import VirtualizedList from "./azentiointerviewprep/optimisation/Virtualization";
+import InfiniteScrolling from "./azentiointerviewprep/optimisation/InfiniteScrolling";
+import InfiniteScrollVirtualized from "./azentiointerviewprep/optimisation/InfiniteScrollVirtualized";
+import SecureComentBox from "./azentiointerviewprep/security/SecureComentBox";
 function App() {
-  const UdatedComp = HOC(User);
+  // const UdatedComp = HOC(User);
+  const ProtactedDashBoard = withAuth(Dashboard);
   return (
     <div className="./App.css">
       {/* <Pagination /> */}
@@ -39,7 +48,15 @@ function App() {
       {/* <Searche /> */}
       {/* <Maincomonent /> */}
       {/* <CodeReviewFeedback /> */}
-      <ParentComponent />
+      {/* <ParentComponent /> */}
+      {/* <User /> */}
+      {/* <ProtactedDashBoard /> */}
+      {/* <Optimzation /> */}
+      {/* <LargeList /> */}
+      {/* <VirtualizedList /> */}
+      {/* <InfiniteScrolling /> */}
+      {/* <InfiniteScrollVirtualized /> */}
+      <SecureComentBox />
     </div>
   );
 }
