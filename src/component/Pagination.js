@@ -15,10 +15,13 @@ const Pagination = () => {
       setData(cachedData[page]);
       return;
     }
-    //   `https://dummyjson.com/products?limit=${pageSize}&skip=${
-    //     (page - 1) * pageSize
-    //   }`
-    fetch(`http://localhost:5000/products/${page}`)
+
+    // http://localhost:5000/products/${page}
+    fetch(
+      `https://dummyjson.com/products?limit=${pageSize}&skip=${
+        (page - 1) * pageSize
+      }`
+    )
       .then((response) => response.json())
       .then((data) => {
         setData(data.products); // Store only products

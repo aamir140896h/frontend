@@ -26,12 +26,17 @@ import VirtualizedList from "./azentiointerviewprep/optimisation/Virtualization"
 import InfiniteScrolling from "./azentiointerviewprep/optimisation/InfiniteScrolling";
 import InfiniteScrollVirtualized from "./azentiointerviewprep/optimisation/InfiniteScrollVirtualized";
 import SecureComentBox from "./azentiointerviewprep/security/SecureComentBox";
+import { Provider } from "react-redux";
+import Counter from "./redux/Counter";
+import store from "./redux/store";
+import Multiplication from "./redux/Multiplication";
+import PostList from "./redux/PostList";
 function App() {
   // const UdatedComp = HOC(User);
   const ProtactedDashBoard = withAuth(Dashboard);
   return (
     <div className="./App.css">
-      {/* <Pagination /> */}
+      <Pagination />
       {/* <Autocomplete /> */}
       {/* <UdatedComp name="Aamir Hussain" /> */}
       {/* <ContextAPI /> */}
@@ -56,7 +61,13 @@ function App() {
       {/* <VirtualizedList /> */}
       {/* <InfiniteScrolling /> */}
       {/* <InfiniteScrollVirtualized /> */}
-      <SecureComentBox />
+      {/* <SecureComentBox /> */}
+
+      {/* <Provider store={store}>
+        <Counter />
+        <Multiplication />
+        <PostList />
+      </Provider> */}
     </div>
   );
 }
