@@ -1,0 +1,22 @@
+.breadcrumb{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    gap: 6px;
+    /* flex-wrap: wrap; */
+}
+
+.breadcrumb a{
+    text-decoration: none;
+    color: #555;
+}
+
+.breadcrumb .seperator{
+    margin: 0 6px;
+    color: #999;
+}
+
+.breadcrumb .current{
+    font-weight: bold;
+    color: #007bff;
+}

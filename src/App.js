@@ -31,12 +31,101 @@ import Counter from "./redux/Counter";
 import store from "./redux/store";
 import Multiplication from "./redux/Multiplication";
 import PostList from "./redux/PostList";
+import RenderPropPattern from "./component/RenderPropPattern";
+import Debouncing from "./component/Debouncing";
+import Throttling from "./component/Throttling";
+import BreadCrumb from "./component/breadcrumbs/BreadCrumb";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import BreadCrumbs from "./component/breadcrumbs/dynamicbreadcrumb/BreadCrumbs";
+import Checkboxes from "./component/checkbox/Checkboxes";
+import { useState } from "react";
 function App() {
   // const UdatedComp = HOC(User);
   const ProtactedDashBoard = withAuth(Dashboard);
+
+  // Breadcrumbs
+  // const path = [
+  //   { label: "Home", href: "/" },
+  //   { label: "Products", href: "/products" },
+  //   { label: "Electronics", href: "/products/electronics" },
+  //   { label: "Mobile Phone", href: "/products/electronics/mobiles" },
+  // ];
+
+  // checkboxesdata
+
+  const checkBoxItems = [
+    {
+      id: 1,
+      label: "Fruits",
+      children: [
+        {
+          id: 2,
+          label: "Citrus",
+          children: [
+            { id: 3, label: "Orange" },
+            { id: 4, label: "Lemon" },
+          ],
+        },
+        {
+          id: 5,
+          label: "Berries",
+          children: [
+            { id: 6, label: "Strawberry" },
+            { id: 7, label: "Blueberry" },
+          ],
+        },
+      ],
+    },
+    {
+      id: 8,
+      label: "Vegetables",
+      children: [
+        {
+          id: 9,
+          label: "Leafy",
+          children: [
+            { id: 10, label: "Spinach" },
+            { id: 11, label: "Lettuce" },
+          ],
+        },
+        {
+          id: 12,
+          label: "Root",
+          children: [
+            { id: 13, label: "Carrot" },
+            { id: 14, label: "Beetroot" },
+          ],
+        },
+      ],
+    },
+    {
+      id: 15,
+      label: "Dairy",
+      children: [
+        {
+          id: 16,
+          label: "Milk Products",
+          children: [
+            { id: 17, label: "Cheese" },
+            { id: 18, label: "Butter" },
+          ],
+        },
+        {
+          id: 19,
+          label: "Yogurt",
+          children: [
+            { id: 20, label: "Greek Yogurt" },
+            { id: 21, label: "Flavored Yogurt" },
+          ],
+        },
+      ],
+    },
+  ];
+
+  const [checked, setChecked] = useState({});
   return (
     <div className="./App.css">
-      <Pagination />
+      {/* <Pagination /> */}
       {/* <Autocomplete /> */}
       {/* <UdatedComp name="Aamir Hussain" /> */}
       {/* <ContextAPI /> */}
@@ -68,6 +157,56 @@ function App() {
         <Multiplication />
         <PostList />
       </Provider> */}
+
+      {/* example 1 */}
+      {/* <RenderPropPattern
+        render={(pos) => (
+          <h2>
+            Mouse Position : X - {pos.x}, Y-{pos.y}{" "}
+          </h2>
+        )}
+      /> */}
+      {/* example 2 */}
+      {/* <RenderPropPattern
+        render={(user) =>
+          user.isLogedIn ? (
+            <h1>Welcome {user.name}</h1>
+          ) : (
+            <h1> Please LogedIn</h1>
+          )
+        }
+      /> */}
+      {/* <RenderPropPattern
+        render={(hover) => (
+          <h1>{hover ? "You're hovering 🐭" : "Hover over me!"}</h1>
+        )}
+      /> */}
+      {/* <Debouncing /> */}
+      {/* <Throttling /> */}
+
+      {/* Breadcrumbs */}
+      {/* <BreadCrumb paths={path} /> */}
+      {/* <BrowserRouter>
+        <BreadCrumbs />
+        <Routes>
+          <Route path="/" element={<div>Home Page</div>} />
+          <Route path="/products" element={<div>Products page</div>} />
+          <Route
+            path="/products/electronics"
+            element={<div>Electronics items</div>}
+          />
+          <Route
+            path="/products/electronics/mobiles"
+            element={<div>Mobiles</div>}
+          />
+        </Routes>
+      </BrowserRouter> */}
+
+      <Checkboxes
+        data={checkBoxItems}
+        checked={checked}
+        setChecked={setChecked}
+      />
     </div>
   );
 }
