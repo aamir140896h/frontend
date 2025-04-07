@@ -39,6 +39,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import BreadCrumbs from "./component/breadcrumbs/dynamicbreadcrumb/BreadCrumbs";
 import Checkboxes from "./component/checkbox/Checkboxes";
 import { useState } from "react";
+import OTPInputs from "./component/otp/OTPInputs";
 function App() {
   // const UdatedComp = HOC(User);
   const ProtactedDashBoard = withAuth(Dashboard);
@@ -53,76 +54,60 @@ function App() {
 
   // checkboxesdata
 
-  const checkBoxItems = [
-    {
-      id: 1,
-      label: "Fruits",
-      children: [
-        {
-          id: 2,
-          label: "Citrus",
-          children: [
-            { id: 3, label: "Orange" },
-            { id: 4, label: "Lemon" },
-          ],
-        },
-        {
-          id: 5,
-          label: "Berries",
-          children: [
-            { id: 6, label: "Strawberry" },
-            { id: 7, label: "Blueberry" },
-          ],
-        },
-      ],
-    },
-    {
-      id: 8,
-      label: "Vegetables",
-      children: [
-        {
-          id: 9,
-          label: "Leafy",
-          children: [
-            { id: 10, label: "Spinach" },
-            { id: 11, label: "Lettuce" },
-          ],
-        },
-        {
-          id: 12,
-          label: "Root",
-          children: [
-            { id: 13, label: "Carrot" },
-            { id: 14, label: "Beetroot" },
-          ],
-        },
-      ],
-    },
-    {
-      id: 15,
-      label: "Dairy",
-      children: [
-        {
-          id: 16,
-          label: "Milk Products",
-          children: [
-            { id: 17, label: "Cheese" },
-            { id: 18, label: "Butter" },
-          ],
-        },
-        {
-          id: 19,
-          label: "Yogurt",
-          children: [
-            { id: 20, label: "Greek Yogurt" },
-            { id: 21, label: "Flavored Yogurt" },
-          ],
-        },
-      ],
-    },
-  ];
+  // const checkBoxItems = [
+  //   {
+  //     id: 1,
+  //     label: "Fruits",
+  //     children: [
+  //       {
+  //         id: 2,
+  //         label: "Citrus",
+  //         children: [
+  //           { id: 3, label: "Orange" },
+  //           { id: 4, label: "Lemon" },
+  //         ],
+  //       },
+  //       {
+  //         id: 5,
+  //         label: "Berries",
+  //         children: [
+  //           { id: 6, label: "Strawberry" },
+  //           { id: 7, label: "Blueberry" },
+  //         ],
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     id: 8,
+  //     label: "Vegetables",
+  //     children: [
+  //       {
+  //         id: 9,
+  //         label: "Leafy",
+  //         children: [
+  //           { id: 10, label: "Spinach" },
+  //           { id: 11, label: "Lettuce" },
+  //         ],
+  //       },
+  //       {
+  //         id: 12,
+  //         label: "Root",
+  //         children: [
+  //           { id: 13, label: "Carrot" },
+  //           { id: 14, label: "Beetroot" },
+  //         ],
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     id: 15,
+  //     label: "Dairy",
+  //   },
+  // ];
+  // const [checked, setChecked] = useState({});
 
-  const [checked, setChecked] = useState({});
+  // OTP
+
   return (
     <div className="./App.css">
       {/* <Pagination /> */}
@@ -202,11 +187,14 @@ function App() {
         </Routes>
       </BrowserRouter> */}
 
-      <Checkboxes
+      {/* <Checkboxes
         data={checkBoxItems}
         checked={checked}
         setChecked={setChecked}
-      />
+      /> */}
+
+      {/* OTP */}
+      <OTPInputs />
     </div>
   );
 }

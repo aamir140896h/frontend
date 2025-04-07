@@ -5,26 +5,29 @@ const Checkboxes = ({ data, checked, setChecked }) => {
   const handleChange = (isChecked, item) => {
     setChecked((prev) => {
       const newState = { ...prev, [item.id]: isChecked };
+
       //   Top-down: update all children
-      const updateChilderen = (node) => {
-        node?.children?.map((child) => {
+      const updateChildren = (node) => {
+        if (!node.children) return;
+        for (const child of node.children) {
           newState[child.id] = isChecked;
-          child.children && updateChilderen(child);
-        });
+          updateChildren(child);
+        }
       };
-      updateChilderen(item);
+      updateChildren(item);
 
       //  Bottom-up: update parents recursively
 
-      const updateParent = (node, tree) => {
-        const findParent = (target, current) => {
-          if (!current.children) return null;
-          for (let child of current.children) {
-            if (child.id === target.id) return current;
-          }
-        };
+      const verifyParentChecked = (node) => {
+        if (!node.children) return newState[node.id] || false;
+
+        newState[node.id] = node.children.every((child) =>
+          verifyParentChecked(child)
+        );
+
+        return newState[node.id];
       };
-      updateParent(item, data);
+      data.forEach((node) => verifyParentChecked(node));
 
       return newState;
     });
@@ -33,8 +36,8 @@ const Checkboxes = ({ data, checked, setChecked }) => {
 
   return (
     <div>
-      {data.map((item, index) => (
-        <div className="parent" key={index}>
+      {data.map((item) => (
+        <div className="parent" key={item.id}>
           <input
             checked={checked[item.id] || false}
             type="checkbox"
