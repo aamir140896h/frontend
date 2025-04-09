@@ -6,8 +6,8 @@ import postReducer from "./postSlice";
 const store = configureStore({
   reducer: {
     counter: counterReducer,
-    multiply: multiplyRducer,
-    posts: postReducer,
+    // multiply: multiplyRducer,
+    // posts: postReducer,
   },
 });
 

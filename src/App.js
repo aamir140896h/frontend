@@ -40,6 +40,11 @@ import BreadCrumbs from "./component/breadcrumbs/dynamicbreadcrumb/BreadCrumbs";
 import Checkboxes from "./component/checkbox/Checkboxes";
 import { useState } from "react";
 import OTPInputs from "./component/otp/OTPInputs";
+import Dropdown from "./component/reuseableDropdown/DropDown";
+import { DropdownProvider } from "./component/reuseableDropdown/DropDownContext";
+import ClassComponentQuestion from "./hackerrank/ClassComponentQuestion";
+import ReducerQuestion from "./hackerrank/ReducerQuestion";
+import Form from "./component/form/Form";
 function App() {
   // const UdatedComp = HOC(User);
   const ProtactedDashBoard = withAuth(Dashboard);
@@ -194,7 +199,15 @@ function App() {
       /> */}
 
       {/* OTP */}
-      <OTPInputs />
+      {/* <OTPInputs /> */}
+      {/*  */}
+      {/* <DropdownProvider>
+        <Dropdown options={["React", "Vue", "Angular"]} />
+      </DropdownProvider> */}
+
+      {/* <ClassComponentQuestion />
+      <ReducerQuestion /> */}
+      <Form />
     </div>
   );
 }
