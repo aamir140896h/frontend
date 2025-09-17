@@ -10,7 +10,7 @@ import Example2 from "./component/memoization/Example2";
 import FetchApiUsingMemo from "./component/memoization/FetchApiUsingMemo";
 import Example1Parent from "./component/usecallbackexamples/Example1Parent";
 import UseMemoMain from "./component/memoization/UseMemoMain";
-import UseCallBackExample from "./component/usecallbackexamples/UseCallBackExample";
+// import UseCallBackExample from "./component/usecallbackexamples/UseCallBackExample";
 import TodoList from "./component/usecallbackexamples/UCTodoList";
 import ToggleComponent from "./component/customhooks/toggle/ToggleComponent";
 import Post from "./component/customhooks/fetchedData/Post";
@@ -18,8 +18,8 @@ import Searche from "./component/customhooks/debounce/Searche";
 import Maincomonent from "./component/redux/Maincomonent";
 import CodeReviewFeedback from "./component/Feedback";
 import ParentComponent from "./azentiointerviewprep/optimisation/ParentComponent";
-import withAuth from "./component/hoc/withAuth";
-import Dashboard from "./component/hoc/Dashboard";
+// import withAuth from "./component/hoc/withAuth";
+// import Dashboard from "./component/hoc/Dashboard";
 import Optimzation from "./azentiointerviewprep/optimisation/Optimzation";
 import LargeList from "./azentiointerviewprep/optimisation/Virtualization";
 import VirtualizedList from "./azentiointerviewprep/optimisation/Virtualization";
@@ -45,9 +45,15 @@ import { DropdownProvider } from "./component/reuseableDropdown/DropDownContext"
 import ClassComponentQuestion from "./hackerrank/ClassComponentQuestion";
 import ReducerQuestion from "./hackerrank/ReducerQuestion";
 import Form from "./component/form/Form";
+import LifecycleMethode from "./component/LifecycleMethode";
+import TicTacToe from "./tic-tac-toe/TicTacToe";
+import HOCExample from "./component/hoc/HOCExample";
+import UseCallbackExample from "./azentiointerviewprep/optimisation/UseCallbackExample";
+import UseCallbackAndMemo from "./component/UseCallbackAndMemo";
+
 function App() {
   // const UdatedComp = HOC(User);
-  const ProtactedDashBoard = withAuth(Dashboard);
+  // const ProtactedDashBoard = withAuth(Dashboard);
 
   // Breadcrumbs
   // const path = [
@@ -168,7 +174,7 @@ function App() {
       /> */}
       {/* <RenderPropPattern
         render={(hover) => (
-          <h1>{hover ? "You're hovering 🐭" : "Hover over me!"}</h1>
+          <h1>{hover ? "You're hovering 👧" : "Hover over me!"}</h1>
         )}
       /> */}
       {/* <Debouncing /> */}
@@ -207,7 +213,12 @@ function App() {
 
       {/* <ClassComponentQuestion />
       <ReducerQuestion /> */}
-      <Form />
+      {/* <Form /> */}
+      {/* <LifecycleMethode /> */}
+      {/* <TicTacToe /> */}
+      {/* <HOCExample />  */}
+      {/* <UseCallbackExample /> */}
+      <UseCallbackAndMemo />
     </div>
   );
 }
